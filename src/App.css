@@ -1,0 +1,46 @@
+/* Add this CSS to your stylesheet */
+.custom-nav {
+    display: flex;
+    position: absolute;
+    justify-content: space-between;
+    gap:20px;
+    right: 150px;
+    font-weight: 500;
+  }
+  .ml{
+    position: absolute;
+    right: 18px;
+    font-weight: 500;
+  }
+  
+  .title-al{
+    font-family: 'Bricolage Grotesque', sans-serif;
+font-family: 'Inter', sans-serif;
+font-family: 'Josefin Sans', sans-serif;
+font-family: 'Noto Sans', sans-serif;
+font-family: 'Poppins', sans-serif;
+  }
+  .icon-large{
+    font-size: 183%;
+
+  }
+  .icons{
+   margin-left: 250px;
+  }
+  .youtube{
+    color:red;
+  }
+  .spoti{
+    color:green;
+  }
+  /* Add this CSS class for the zoom-in animation */
+.zoom-in {
+  margin: 20px;
+height: 230px;
+  transition: transform 0.7s ease-in-out;
+
+}
+
+.zoom-in:hover {
+  transform: scale(1.1); /* Increase the scale for zoom-in effect on hover */
+}
