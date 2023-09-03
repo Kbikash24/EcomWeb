@@ -15,23 +15,27 @@
   
   .title-al{
     font-family: 'Bricolage Grotesque', sans-serif;
-font-family: 'Inter', sans-serif;
-font-family: 'Josefin Sans', sans-serif;
-font-family: 'Noto Sans', sans-serif;
-font-family: 'Poppins', sans-serif;
+    font-family: 'Inter', sans-serif;
+    font-family: 'Josefin Sans', sans-serif;
+    font-family: 'Noto Sans', sans-serif;
+    font-family: 'Poppins', sans-serif;
+    text-align: center;
+    font-size: 30px;
+    margin-top: 25px;
   }
   .icon-large{
     font-size: 183%;
+    color: white;
 
   }
   .icons{
    margin-left: 250px;
   }
   .youtube{
-    color:red;
+    color:white;
   }
   .spoti{
-    color:green;
+    color: white;
   }
   /* Add this CSS class for the zoom-in animation */
 .zoom-in {
@@ -43,4 +47,40 @@ height: 230px;
 
 .zoom-in:hover {
   transform: scale(1.1); /* Increase the scale for zoom-in effect on hover */
+}
+/* CSS for overlaying the cart on the right */
+.cart-overlay {
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  width: 380px; /* Adjust the width as needed */
+  background-color: white;
+  box-shadow: -2px 0 5px rgba(0, 0, 0, 0.2); /* Optional: Add a shadow */
+  z-index: 1000; /* Ensure it's above other elements */
+  padding: 5px; /* Add padding for content */
+  overflow-y: auto; /* Enable vertical scrolling if needed */
+}
+
+
+.c-title{
+  font-family: 'Bricolage Grotesque', sans-serif;
+font-family: 'Inter', sans-serif;
+font-family: 'Josefin Sans', sans-serif;
+font-family: 'Noto Sans', sans-serif;
+font-family: 'Poppins', sans-serif;
+}
+
+/* NavBar.css */
+
+/* Style the item count */
+.cart-item-count {
+  background-color: #ff5722; /* Background color */
+  color: #fff; /* Text color */
+  border-radius: 50%; /* Make it circular */
+  padding: 4px 7px; /* Adjust padding as needed */
+  font-size: 9px; /* Adjust font size as needed */
+  position: absolute;
+  top: 0;
+  right: 0;
 }

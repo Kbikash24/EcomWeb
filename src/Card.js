@@ -5,18 +5,8 @@ import "./App.css";
 const Cards = () => {
   return (
     <>
-      <div
-        className="title-al"
-        style={{
-          textAlign: "center",
-          fontSize: "36px",
-          marginTop: "26px",
-          fontWeight: "900",
-        }}
-      >
-        Music
-      </div>
-      <div style={{ display: "flex", flexWrap: "wrap", marginTop: "60px" }}>
+      <p className="title-al">Music</p>
+      <div style={{ display: "flex", flexWrap: "wrap", marginTop: "40px" }}>
         {productsArr.map((product, index) => (
           <div
             key={index}
@@ -26,7 +16,7 @@ const Cards = () => {
               boxSizing: "border-box",
             }}
           >
-            <Card style={{ width: "18rem", marginLeft: "30%", border: "none" }}>
+            <Card style={{ width: "18rem", marginLeft: "26%", border: "none" }}>
               <Card.Title style={{ textAlign: "center" }}>
                 {product.title}
               </Card.Title>
@@ -34,12 +24,16 @@ const Cards = () => {
                 variant="top"
                 src={product.imageUrl}
                 className="custom-card zoom-in"
-                 
               />
               <Card.Body
-                style={{ display: "flex", justifyContent: "space-between",fontSize:'20px',fontWeight:'500'}}
+                style={{
+                  display: "flex",
+                  justifyContent: "space-between",
+                  fontSize: "20px",
+                  fontWeight: "500",
+                }}
               >
-                <Card.Text>₹{product.price}</Card.Text>
+                <Card.Text>${product.price}</Card.Text>
                 <Button
                   variant="warning"
                   style={{ position: "absolute", left: "180px" }}
