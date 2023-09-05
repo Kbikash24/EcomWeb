@@ -15,7 +15,7 @@ const Footer = (props) => {
           Go to Cart
         </Button>
       </div>
-      <footer className="bg-dark text-light py-3 ">
+      <footer className="bg-dark text-light py-4">
         <Container>
           <Row>
             <Col md={6}>

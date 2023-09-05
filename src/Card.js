@@ -1,51 +1,45 @@
+import React, { useContext } from "react";
 import Button from "react-bootstrap/Button";
 import Card from "react-bootstrap/Card";
 import productsArr from "./ProductData";
+import Context from "./Context/Context";
 import "./App.css";
+
+
 const Cards = () => {
+  const {addToCart}=useContext(Context)
   return (
-    <>
+    <div className="container">
       <p className="title-al">Music</p>
-      <div style={{ display: "flex", flexWrap: "wrap", marginTop: "40px" }}>
+      <div className="row ">
         {productsArr.map((product, index) => (
-          <div
-            key={index}
-            style={{
-              flexBasis: "calc(50% - 40px)",
-              margin: "20px",
-              boxSizing: "border-box",
-            }}
-          >
-            <Card style={{ width: "18rem", marginLeft: "26%", border: "none" }}>
-              <Card.Title style={{ textAlign: "center" }}>
+          <div key={index} className="col-lg-6 mb-4 " style={{paddingLeft:'65px'}}>
+            {/* Add ml-auto for right margin */}
+            <Card className="custom-card" style={{ width: "23rem",margin:'20px',padding:'10px'}}>
+              <Card.Title className="card-title text-center" style={{margin:'10px'}}>
                 {product.title}
               </Card.Title>
               <Card.Img
                 variant="top"
                 src={product.imageUrl}
-                className="custom-card zoom-in"
+                className="card-image zoom-in"
               />
-              <Card.Body
-                style={{
-                  display: "flex",
-                  justifyContent: "space-between",
-                  fontSize: "20px",
-                  fontWeight: "500",
-                }}
-              >
-                <Card.Text>${product.price}</Card.Text>
+              <Card.Body className="card-body">
+                <Card.Text className="card-price" style={{fontSize:'18px',fontWeight:'600'}}>Price:  ${product.price}</Card.Text>
                 <Button
                   variant="warning"
-                  style={{ position: "absolute", left: "180px" }}
+                  className="card-button"
+                  style={{ width: '100%' }}
+                  onClick={()=>addToCart(product)}
                 >
                   Add to Cart
                 </Button>
               </Card.Body>
-            </Card>{" "}
+            </Card>
           </div>
         ))}
       </div>
-    </>
+    </div>
   );
 };
 

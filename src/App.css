@@ -21,7 +21,8 @@
     font-family: 'Poppins', sans-serif;
     text-align: center;
     font-size: 30px;
-    margin-top: 25px;
+    margin-top: 20px;
+   
   }
   .icon-large{
     font-size: 183%;
@@ -38,23 +39,14 @@
     color: white;
   }
   /* Add this CSS class for the zoom-in animation */
-.zoom-in {
-  margin: 20px;
-height: 230px;
-  transition: transform 0.7s ease-in-out;
 
-}
-
-.zoom-in:hover {
-  transform: scale(1.1); /* Increase the scale for zoom-in effect on hover */
-}
 /* CSS for overlaying the cart on the right */
 .cart-overlay {
   position: fixed;
   top: 0;
   right: 0;
   bottom: 0;
-  width: 380px; /* Adjust the width as needed */
+  width: 480px; /* Adjust the width as needed */
   background-color: white;
   box-shadow: -2px 0 5px rgba(0, 0, 0, 0.2); /* Optional: Add a shadow */
   z-index: 1000; /* Ensure it's above other elements */
@@ -69,6 +61,7 @@ font-family: 'Inter', sans-serif;
 font-family: 'Josefin Sans', sans-serif;
 font-family: 'Noto Sans', sans-serif;
 font-family: 'Poppins', sans-serif;
+font-size: 20px;
 }
 
 /* NavBar.css */
@@ -83,4 +76,26 @@ font-family: 'Poppins', sans-serif;
   position: absolute;
   top: 0;
   right: 0;
+}
+
+
+
+/* cart */
+.btn-remove{
+  color:red;
+  font-size: 20px;
+  margin-bottom: 10px;
+}
+.cart-img{
+  width: 60px;
+  height: 60px;
+}
+
+
+.zoom-in {
+  transition: transform 0.3s ease; /* Adjust the transition duration as needed */
+}
+
+.zoom-in:hover {
+  transform: scale(1.1); /* Adjust the scale factor for the zoom effect on hover */
 }
