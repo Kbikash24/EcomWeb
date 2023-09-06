@@ -103,3 +103,9 @@ font-size: 20px;
 .caption{
   border:1px solid black;
 }
+/* App.css */
+.navbar {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
