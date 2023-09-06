@@ -1,19 +1,12 @@
 import React from "react";
-import { Container, Row, Col, Button } from "react-bootstrap";
+import { Container, Row, Col } from "react-bootstrap";
 import { BsFacebook, BsYoutube, BsSpotify } from "react-icons/bs";
 
 const Footer = (props) => {
   return (
     <>
       <div style={{ marginLeft: "42%", marginBottom: "20px" }}>
-        <Button
-          variant="warning"
-          size="lg"
-          style={{ width: "230px" }}
-          onClick={props.handleCart}
-        >
-          Go to Cart
-        </Button>
+        
       </div>
       <footer className="bg-dark text-light py-4">
         <Container>

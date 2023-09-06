@@ -6,7 +6,7 @@ import Context from "./Context/Context";
 import "./App.css";
 
 
-const Cards = () => {
+const Cards = (props) => {
   const {addToCart}=useContext(Context)
   return (
     <div className="container">
@@ -36,9 +36,17 @@ const Cards = () => {
                 </Button>
               </Card.Body>
             </Card>
+           
           </div>
         ))}
       </div>
+      <Button
+      variant="warning"
+     style={{ width: "230px",marginLeft:'430px' }}
+          onClick={props.handleCart}
+        >
+          Go to Cart
+        </Button>
     </div>
   );
 };

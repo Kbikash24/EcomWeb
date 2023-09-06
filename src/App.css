@@ -20,8 +20,9 @@
     font-family: 'Noto Sans', sans-serif;
     font-family: 'Poppins', sans-serif;
     text-align: center;
-    font-size: 30px;
+    font-size: 35px;
     margin-top: 20px;
+    font-weight: 700;
    
   }
   .icon-large{
@@ -98,4 +99,7 @@ font-size: 20px;
 
 .zoom-in:hover {
   transform: scale(1.1); /* Adjust the scale factor for the zoom effect on hover */
+}
+.caption{
+  border:1px solid black;
 }

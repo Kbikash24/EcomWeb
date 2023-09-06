@@ -11,7 +11,7 @@ const NavBar = (props) => {
   const { totalqtyCart } = useContext(Context);
 
   return (
-    <Navbar expand="sm" bg="warning" variant="light" responsive>
+    <Navbar expand="sm" bg="warning" variant="light"  style={{position:'sticky'}}>
       <Container>
         <Navbar.Brand href="#home" style={{ fontWeight: "700" }}>
           The-Generics
