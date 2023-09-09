@@ -5,7 +5,7 @@ import "./About.css";
 const About = () => {
   return (
     <>
-      <Carousel>
+      <Carousel className="carousel">
         <Carousel.Item interval={1000}>
           <img src="images\unsplash-e.jpg" alt="" />
           <div className="carousel-caption">
