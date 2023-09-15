@@ -5,12 +5,12 @@ import { BsFacebook, BsYoutube, BsSpotify } from "react-icons/bs";
 const Footer = (props) => {
   return (
     <>
-      <div style={{ marginLeft: "42%", marginBottom: "20px" }}>
+      <div style={{ marginLeft: "42%",  }}>
         
       </div>
-      <footer className="bg-dark text-light py-4">
+      <footer className="bg-dark text-light py-1">
         <Container>
-          <Row>
+          <Row  style={{paddingTop:'20px'}}>
             <Col md={6}>
               {/* Your footer content on the left */}
               <p>&copy; 2023 The-Generics</p>

@@ -20,6 +20,7 @@ const NavBar = (props) => {
           <Nav.Link href="http://localhost:3000/home">Home</Nav.Link>
           <Nav.Link href="http://localhost:3000/store">Store</Nav.Link>
           <Nav.Link href="http://localhost:3000/About">About</Nav.Link>
+          <Nav.Link href="http://localhost:3000/Login">Login</Nav.Link>
           <Nav.Link href="http://localhost:3000/contact">Contact Us</Nav.Link>
 
         </Nav>
