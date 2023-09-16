@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 
 const AuthContext = React.createContext({
   token: "",
@@ -6,59 +6,25 @@ const AuthContext = React.createContext({
   login: (token) => {},
   logout: () => {},
 });
-
 export const AuthContextProvider = (props) => {
-  const initialToken = localStorage.getItem('token');
+  // Get the initial token from localStorage or set it to null if it doesn't exist
+  const initialToken = localStorage.getItem('token') || null;
+
+  // Use state to manage the token and userLoggedIn state
   const [token, setToken] = useState(initialToken);
   const userLoggedIn = !!token;
-  let logoutTimer;
 
+  // Function to handle login by setting the token in state and localStorage
   const loginHandler = (token) => {
     setToken(token);
     localStorage.setItem('token', token);
-
-    // Set a timer for 5 minutes (300,000 milliseconds)
-    logoutTimer = setTimeout(logoutHandler, 60000);
   };
 
+  // Function to handle logout by clearing the token from state and localStorage
   const logoutHandler = () => {
     setToken(null);
     localStorage.removeItem('token');
-    if (logoutTimer) {
-      clearTimeout(logoutTimer); // Clear the timer
-    }
   };
-
-  useEffect(() => {
-    // Check if the user is logged in and set a timer
-    if (userLoggedIn) {
-      // Set a timer for 5 minutes (300,000 milliseconds)
-      logoutTimer = setTimeout(logoutHandler, 60000);
-    } else {
-      // Clear the timer if the user is not logged in
-      if (logoutTimer) {
-        clearTimeout(logoutTimer);
-      }
-    }
-
-    // Add event listeners or other mechanisms to reset the timer on user activity
-    const resetTimerOnActivity = () => {
-      if (userLoggedIn && logoutTimer) {
-        clearTimeout(logoutTimer);
-        logoutTimer = setTimeout(logoutHandler, 60000); // Reset the timer
-      }
-    };
-
-    // Attach event listeners to reset the timer (e.g., on user interactions)
-    window.addEventListener("mousemove", resetTimerOnActivity);
-    window.addEventListener("keydown", resetTimerOnActivity);
-
-    // Clean up event listeners when the component unmounts
-    return () => {
-      window.removeEventListener("mousemove", resetTimerOnActivity);
-      window.removeEventListener("keydown", resetTimerOnActivity);
-    };
-  }, [userLoggedIn]);
 
   const contextValue = {
     token: token,

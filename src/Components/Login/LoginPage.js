@@ -15,8 +15,9 @@ const LoginPage = () => {
     e.preventDefault();
     let url;
     let requestBody = {
+      
       email: email,
-      password: password,
+       password: password,
       returnSecureToken: true,
     };
 
@@ -45,6 +46,7 @@ const LoginPage = () => {
       }
       const data = await response.json();
       AuthCtx.login(data.idToken);
+      
       navigate("/store")
       setEmail("");
       setPassword("");

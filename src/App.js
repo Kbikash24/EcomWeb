@@ -1,4 +1,5 @@
-import React, { useState } from "react";
+import React, { useState,useContext } from "react";
+
 import {
   BrowserRouter as Router,
   Route,
@@ -16,10 +17,13 @@ import ContactUs from "./Pages/ContactUs";
 import CartContext from "./Context/CartContext";
 import ProductView from "./Pages/ProductView";
 import LoginPage from "./Components/Login/LoginPage";
+import AuthContext from "./Context/AuthContext";
 
 function App() {
+ 
   const [showCart, setShowCart] = useState(false);
-
+const AuthCtx=useContext(AuthContext)
+console.log(AuthCtx.isLoggedIn)
   const handleCart = () => {
     setShowCart(!showCart);
   };
@@ -50,20 +54,34 @@ function App() {
 
   return (
     <Router>
+      
       <CartContext>
         <NavBar handleCart={handleCart} />
         {showCart && <Cart handleCart={handleCart} />}
         <Routes>
-          <Route path="/" element={<Navigate to="/home" />} />
+        <Route
+            path="/"
+            element={
+              AuthCtx.isLoggedIn ? (
+                <Navigate to="/home" />
+              ) : (
+                <Navigate to="/login" />
+              )
+            }
+          />
+          
           <Route path="/ProductView/:id" element={<ProductView />} />
           <Route path="/home" element={<Home />} />
-          <Route path="/store" element={<Card handleCart={handleCart} />} />
-          <Route path="/login" element={<LoginPage />} />
+           <Route path="/store" element={AuthCtx.isLoggedIn?<Card handleCart={handleCart}/> :<Navigate to={"/login"}/> } /> 
+         <Route path="/login" element={<LoginPage />} />
           <Route path="/about" element={<About />} />
           <Route path="/contact" element={<ContactUs onSubmit={AddData} />} />
+      
         </Routes>
+
         <Footer />
       </CartContext>
+      
     </Router>
   );
 }

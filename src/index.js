@@ -4,12 +4,14 @@ import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 import 'material-icons/iconfont/material-icons.css';
+import { AuthContextProvider } from './Context/AuthContext';
 
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
-    <App />
+    <AuthContextProvider>
+    <App /></AuthContextProvider>
   </React.StrictMode>
 );
 
