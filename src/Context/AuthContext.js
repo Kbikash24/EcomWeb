@@ -10,7 +10,8 @@ const AuthContext = React.createContext({
 export const AuthContextProvider = (props) => {
   // Get the initial token from localStorage or set it to null if it doesn't exist
   const initialToken = localStorage.getItem('token') || null;
-  const initialUserId = localStorage.getItem('userId') || null;
+  const initialEmail = localStorage.getItem('userId') || null;
+  const initialUserId = initialEmail ? initialEmail.split("@")[0] : null;
 
 
   // Use state to manage the token and userLoggedIn state
