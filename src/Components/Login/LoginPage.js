@@ -45,7 +45,7 @@ const LoginPage = () => {
         throw new Error(errorMsg);
       }
       const data = await response.json();
-      AuthCtx.login(data.idToken);
+      AuthCtx.login(data.idToken,data.email)
       
       navigate("/store")
       setEmail("");
